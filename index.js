@@ -3,7 +3,7 @@ const successEl = document.getElementById("success");
 const subscribeBtn = document.getElementById("subscribe-btn");
 const emailSignupEl = document.getElementById("email-signup");
 const validationEl=document.getElementById("validation");
-const userEmailEl = document.getElementById("user-emai");
+const subscriberEmailEl = document.getElementById("subscriber-email");
 
 const emailIsValid = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -27,10 +27,14 @@ const validateForm = (event) => {
         emailSignupEl.focus();
         return false;
     } else {
+        //removes the hide class from the main content so it displays
         newsEl.classList.add('hide');
+        //removes the success element
         successEl.classList.remove('hide');
+        //removes the red ascent error indicators
         emailSignupEl.classList.remove('invalid-input');
-        userEmailEl.textContent = emailInput.value;
+        //adds the text from th email address input to the text in the success element
+        subscriberEmailEl.textContent = emailSignupEl.value;
         return true;
     }
 }
