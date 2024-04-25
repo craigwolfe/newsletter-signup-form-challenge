@@ -4,7 +4,7 @@ const subscribeBtn = document.getElementById("subscribe-btn");
 const emailSignupEl = document.getElementById("email-signup");
 const validationEl=document.getElementById("validation");
 const subscriberEmailEl = document.getElementById("subscriber-email");
-
+const dismissBtn= document.getElementById("dismiss-btn");
 const emailIsValid = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -42,7 +42,7 @@ const validateForm = (event) => {
 //executes validateForm function above
 subcribeBtn.addEventListener('click', validateForm);
 
-dismissBtnEl.addEventListener('click', (event) => {
+dismissBtn.addEventListener('click', (event) => {
     event.preventDefault();
     newsletFormEl.reset();
 
