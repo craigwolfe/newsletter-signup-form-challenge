@@ -2,6 +2,7 @@ const newsEl = document.getElementById("news");
 const successEl = document.getElementById("success");
 const subscribeBtn = document.getElementById("subscribe-btn");
 const emailSignupEl = document.getElementById("email-signup");
+const validationEl=document.getElementById("validation");
 
 const emailIsValid = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -19,14 +20,14 @@ const validateForm = (event) => {
   //prevents refresh on button press
     // If the input email address is blank or not valid
     if (emailSignupEl.value === '' || !emailIsValid(emailSignupEl.value)) {
-        invalidEmailMsg.classList.remove('hidden');
-        emailInput.classList.add('invalid-input');
-        emailInput.focus();
+        validationEl.classList.remove('hide');
+        emailSignupEl.classList.add('invalid-input');
+        emailSignupEl.focus();
         return false;
     } else {
-        newsletCardEl.classList.add('hidden');
-        successCardEl.classList.remove('hidden');
-        emailInput.classList.remove('invalid-input');
+        newsEl.classList.add('hide');
+        successEl.classList.remove('hide');
+        emailSignupEl.classList.remove('invalid-input');
         userEmailEl.textContent = emailInput.value;
         return true;
     }
