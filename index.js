@@ -12,14 +12,14 @@ const emailIsValid = (email) => {
 //   console.log(newsEl);
 //   successEl.classList.remove("success");
 //   newsEl.classList.add("hide");
-// }
-
+//}
 
 const validateForm = (event) => {
     event.preventDefault();
   //prevents refresh on button press
     // If the input email address is blank or not valid
     if (emailSignupEl.value === '' || !emailIsValid(emailSignupEl.value)) {
+  //display #validation paragraph
         //validationEl.classList.remove('hide');
         emailSignupEl.classList.add('invalid-input');
         emailSignupEl.focus();
