@@ -19,9 +19,9 @@ const validateForm = (event) => {
   //prevents refresh on button press
     // If the input email address is blank or not valid
     if (emailSignupEl.value === '' || !emailIsValid(emailSignupEl.value)) {
-  //display #validation paragraph
-        //validationEl.classList.remove('hide');
-        emailSignupEl.classList.add('invalid-input');
+  //remove class hide  #validation paragraph
+        validationEl.classList.remove('hide');
+      //  emailSignupEl.classList.add('invalid-input');
         emailSignupEl.focus();
         return false;
     } else {
