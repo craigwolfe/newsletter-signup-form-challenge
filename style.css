@@ -58,7 +58,7 @@ h1 {
   height: auto;
   min-width: 375px;
 }
-.emailAddress {
+label.email {
   font-weight: 700;
   font-size: 0.8rem;
 }
