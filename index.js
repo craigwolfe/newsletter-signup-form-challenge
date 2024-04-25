@@ -21,7 +21,8 @@ const validateForm = (event) => {
     if (emailSignupEl.value === '' || !emailIsValid(emailSignupEl.value)) {
   //remove class hide  #validation paragraph
         validationEl.classList.remove('hide');
-      //  emailSignupEl.classList.add('invalid-input');
+      //adds .invalid-input class that adds red ascent validation error
+        emailSignupEl.classList.add('invalid-input');
         emailSignupEl.focus();
         return false;
     } else {
