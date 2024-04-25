@@ -5,6 +5,8 @@
   --color-neutral-charcoal: #36384e;
   --color-neutral-grey: #9294a0;
   --color-neutral-white: #ffffff;
+   --color-red: hsl(0, 100%, 50%);
+  --color-light-red: hsl(0, 100%, 95%);
 }
 
 /*
@@ -106,6 +108,15 @@ input#email-signup {
   cursor: pointer;
 }
 
+.invalid-input:focus {
+    border: 0.1rem solid var(--color-red);
+    outline: 0.1rem solid var(--color-red);
+    background: var(--color-light-red);
+}
+
+.invalid-input::placeholder {
+    color: var(--color-red);
+}
 /*Hide the desktop image by default*/
 .desktop {
   display: none;
