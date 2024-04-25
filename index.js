@@ -3,6 +3,7 @@ const successEl = document.getElementById("success");
 const subscribeBtn = document.getElementById("subscribe-btn");
 const emailSignupEl = document.getElementById("email-signup");
 const validationEl=document.getElementById("validation");
+const userEmailEl = document.getElementById("user-emai");
 
 const emailIsValid = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
