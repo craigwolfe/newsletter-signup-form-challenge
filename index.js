@@ -38,3 +38,16 @@ const validateForm = (event) => {
         return true;
     }
 }
+
+//executes validateForm function above
+subcribeBtn.addEventListener('click', validateForm);
+
+dismissBtnEl.addEventListener('click', (event) => {
+    event.preventDefault();
+    newsletFormEl.reset();
+
+    newsEl.classList.remove('hidden');
+    validationEl.classList.add('hide');
+
+    successEl.classList.add('hide');
+});
