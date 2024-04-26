@@ -6,6 +6,10 @@ const validationEl = document.getElementById("validation");
 const formEl = document.getElementById("newsletter-form");
 const subscriberEmailEl = document.getElementById("subscriber-email");
 const dismissBtn = document.getElementById("dismiss-btn");
+//this clears the input field when page is refreshed
+window.addEventListener("load", function () {
+  document.getElementById("email-signup").value = "";
+});
 
 // Function to check if email is valid
 const emailIsValid = (email) => {
