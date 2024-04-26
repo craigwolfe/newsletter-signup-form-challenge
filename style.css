@@ -41,11 +41,15 @@ h1 {
   padding: 25px;
   min-height: auto;
   border-radius: 20px;
+  font-size: 0.95rem;
 }
 .newsletter-form {
   padding: 0 30px;
   align-self: center;
   max-width: 400px;
+}
+.newsletter-form p {
+  line-height: 1.5rem;
 }
 .newsletter-image {
   align-self: center;
@@ -53,11 +57,11 @@ h1 {
   min-width: 375px;
 }
 label.email {
-  font-weight: 700;
-  font-size: 0.8rem;
+  font-weight: 500;
+  font-size: 0.75rem;
 }
 ul.benefits {
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
   padding: 0;
 }
 li {
@@ -115,10 +119,20 @@ input#email-signup.invalid-input {
   padding: 50px;
   min-height: auto;
   border-radius: 20px;
-  max-width: 450px;
+  max-width: 400px;
 }
 .message img {
   max-width: 75px;
+}
+.message h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.message > p {
+  line-height: 1.5rem;
+}
+#subscriber-email {
+  font-weight: 500;
 }
 button#subscribe-btn.subscribe {
   border: none;
@@ -213,6 +227,9 @@ button#dismiss-btn.dismiss {
       rgba(255, 84, 116, 1) 41%,
       rgba(255, 103, 66, 1) 67%
     );
+    -webkit-box-shadow: 10px 10px 20px 2px rgba(255, 84, 115, 0.21);
+    -moz-box-shadow: 10px 10px 20px 2px rgba(255, 84, 115, 0.21);
+    box-shadow: 10px 10px 20px 2px rgba(255, 84, 115, 0.21);
     width: 100%;
     border-radius: 5px;
     min-height: 60px;
@@ -226,6 +243,9 @@ button#dismiss-btn.dismiss {
       rgba(255, 84, 116, 1) 41%,
       rgba(255, 103, 66, 1) 67%
     );
+    -webkit-box-shadow: 10px 10px 20px 2px rgba(255, 84, 115, 0.21);
+    -moz-box-shadow: 10px 10px 20px 2px rgba(255, 84, 115, 0.21);
+    box-shadow: 10px 10px 20px 2px rgba(255, 84, 115, 0.21);
     width: 100%;
     border-radius: 5px;
     min-height: 60px;
