@@ -2,52 +2,56 @@ const newsEl = document.getElementById("news");
 const successEl = document.getElementById("success");
 const subscribeBtn = document.getElementById("subscribe-btn");
 const emailSignupEl = document.getElementById("email-signup");
-const validationEl=document.getElementById("validation");
+const validationEl = document.getElementById("validation");
+const formEl = document.getElementById("newsletter-form");
 const subscriberEmailEl = document.getElementById("subscriber-email");
-const dismissBtn= document.getElementById("dismiss-btn");
+const dismissBtn = document.getElementById("dismiss-btn");
+
+// Function to check if email is valid
 const emailIsValid = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 
-// function hideContainer() {
-//   console.log(newsEl);
-//   successEl.classList.remove("success");
-//   newsEl.classList.add("hide");
-//}
+// Function to handle form validation and submission
+const handleFormSubmission = (event) => {
+  event.preventDefault(); // Prevent default form submission
 
-const validateForm = (event) => {
-    event.preventDefault();
-  //prevents refresh on button press
-    // If the input email address is blank or not valid
-    if (emailSignupEl.value === '' || !emailIsValid(emailSignupEl.value)) {
-  //remove class hide  #validation paragraph
-        validationEl.classList.remove('hide');
-      //adds .invalid-input class that adds red ascent validation error
-        emailSignupEl.classList.add('invalid-input');
-        emailSignupEl.focus();
-        return false;
-    } else {
-        //removes the hide class from the main content so it displays
-        newsEl.classList.add('hide');
-        //removes the success element
-        successEl.classList.remove('hide');
-        //removes the red ascent error indicators
-        emailSignupEl.classList.remove('invalid-input');
-        //adds the text from th email address input to the text in the success element
-        subscriberEmailEl.textContent = emailSignupEl.value;
-        return true;
-    }
-}
+  // If email is invalid
+  if (emailSignupEl.value === "" || !emailIsValid(emailSignupEl.value)) {
+    validationEl.classList.remove("hide"); // Show validation message
+    emailSignupEl.classList.add("invalid-input"); // Add styling for invalid input
+  } else {
+    // If email is valid
+    validationEl.classList.add("hide"); // Hide validation message
+    emailSignupEl.classList.remove("invalid-input"); // Remove styling for invalid input
 
-//executes validateForm function above
-subcribeBtn.addEventListener('click', validateForm);
+    // Hide newsletter section
+    newsEl.classList.add("hide");
 
-dismissBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    newsletFormEl.reset();
+    // Show success message section
+    successEl.classList.remove("success");
 
-    newsEl.classList.remove('hidden');
-    validationEl.classList.add('hide');
+    // Update subscriber email in success message
+    subscriberEmailEl.textContent = emailSignupEl.value;
+  }
+};
 
-    successEl.classList.add('hide');
+// Event listener for form submission
+formEl.addEventListener("submit", handleFormSubmission);
+
+// Event listener for dismiss button
+dismissBtn.addEventListener("click", (event) => {
+  event.preventDefault(); // Prevent default button action
+  formEl.reset(); // Reset form
+  newsEl.classList.remove("hide"); // Show newsletter section
+  validationEl.classList.add("hide"); // Hide validation message
+  successEl.classList.add("success"); // Hide success message
+});
+
+// Event listener for email input blur event
+emailSignupEl.addEventListener("blur", () => {
+  if (emailSignupEl.value !== "") {
+    // If email input is not empty, validate it
+    handleFormSubmission(event);
+  }
 });

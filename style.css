@@ -5,21 +5,12 @@
   --color-neutral-charcoal: #36384e;
   --color-neutral-grey: #9294a0;
   --color-neutral-white: #ffffff;
-   --color-red: hsl(0, 100%, 50%);
+  --color-red: hsl(0, 100%, 50%);
   --color-light-red: hsl(0, 100%, 95%);
 }
-
-/*
-### Primary
-
-- Tomato: hsl(4, 100%, 67%)  	#ff6257
-
-### Neutral
-
-- Dark Slate Grey: hsl(234, 29%, 20%) 	#242742   --background-color desktop
-- Charcoal Grey: hsl(235, 18%, 26%)   --	#36384e
-- Grey: hsl(231, 7%, 60%) --- light grey   	#9294a0
-- White: hsl(0, 0%, 100%)  ---white   #ffffff
+/*red-orange button gradient
+#ff5474 red
+#ff6742orange
 */
 
 html {
@@ -39,6 +30,7 @@ body {
 h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  margin-top: 0px;
 }
 /*Newsletter styles*/
 .newsletter {
@@ -84,7 +76,6 @@ li::before {
 }
 input#email-signup {
   margin-top: 10px;
-  margin-bottom: 10px;
   border-radius: 5px;
   width: calc(100% - 2px);
   min-height: 60px;
@@ -93,8 +84,10 @@ input#email-signup {
   color: var(--color-neutral-charcoal);
   border: 1px solid rgba(146, 148, 160, 0.5);
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
-.subscribe {
+
+button#subscribe-btn.subscribe {
   border: none;
   border-radius: 5px;
   background-color: var(--color-neutral-dark);
@@ -107,15 +100,25 @@ input#email-signup {
   margin-bottom: 20px;
   cursor: pointer;
 }
-
 .invalid-input:focus {
-    border: 0.1rem solid var(--color-red);
-    outline: 0.1rem solid var(--color-red);
-    background: var(--color-light-red);
+  border: 0.1rem solid var(--color-red);
+  outline: 0.1rem solid var(--color-red);
+  background: var(--color-light-red);
+  color: var(--color-red);
 }
-
-.invalid-input::placeholder {
-    color: var(--color-red);
+.label-validation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+.validate {
+  color: var(--color-red);
+  font-weight: 500;
+}
+input#email-signup.invalid-input {
+  color: var(--color-red);
+  font-weight: 200;
 }
 /*Hide the desktop image by default*/
 .desktop {
@@ -135,13 +138,13 @@ input#email-signup {
   border-radius: 20px;
   max-width: 450px;
 }
-.message button {
+button#dismiss-btn.dismiss {
   border: none;
   border-radius: 5px;
   background-color: var(--color-neutral-dark);
   color: var(--color-neutral-white);
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   font-size: 1rem;
   font-family: 700;
   justify-content: center;
@@ -156,6 +159,7 @@ input#email-signup {
 .success {
   display: none;
 }
+
 /*media query for mobile devices*/
 @media (min-width: 576px) {
   .newsletter {
@@ -201,7 +205,33 @@ input#email-signup {
   .mobile {
     display: none;
   }
-
+  /*active state for subscribe and dismiss button*/
+  button#dismiss-btn.dismiss:active {
+    background: rgb(255, 84, 116);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 84, 116, 1) 41%,
+      rgba(255, 103, 66, 1) 67%
+    );
+    width: 100%;
+    border-radius: 5px;
+    min-height: 60px;
+    font-size: 1rem;
+    font-family: 700;
+  }
+  button#subscribe-btn.subscribe:active {
+    background: rgb(255, 84, 116);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 84, 116, 1) 41%,
+      rgba(255, 103, 66, 1) 67%
+    );
+    width: 100%;
+    border-radius: 5px;
+    min-height: 60px;
+    font-size: 1rem;
+    font-family: 700;
+  }
   /* Display the desktop image on desktop */
   .desktop {
     display: block;

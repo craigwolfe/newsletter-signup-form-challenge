@@ -32,9 +32,13 @@
           <li>And much more!</li>
         </ul>
         <form id="newsletter-form">
-          <p id="validation" class="hide">Email address is invalid</p>
-          <label for="email" class="email">Email address</label><br>
-          <input type="email" id="email-signup" name="newsletter-signup" required>
+          <div class="label-validation">
+            <label for="email" class="email">Email address</label>
+            <p id="validation" class="validate hide">Email address is invalid
+            </p>
+          </div>
+
+          <input type="email" id="email-signup" name="newsletter-signup" placeholder="email@company.com">
           <div>
             <button id="subscribe-btn" class="subscribe">Subscribe to monthly
               newsletter</button>
@@ -56,7 +60,7 @@
   <footer>
     <!-- Place any footer content here if needed -->
   </footer>
-  
+
 
 </body>
 
